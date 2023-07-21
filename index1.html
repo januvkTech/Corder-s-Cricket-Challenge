@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>game</title>
+    <link rel="stylesheet" href="index.css">
+    <noscript>
+        <style type="text/css">
+            .mainContainer {
+                display: none;
+            }
+
+            .jsError {
+                display: block;
+            }
+
+            /* .jsError p {
+                justify-content: center;
+                align-items: center;
+            } */
+        </style>
+    </noscript>
+    <script>
+        function startGame() {
+            document.querySelector(".startPage").style.display = "none";
+            document.querySelector(".mainContainer").style.display = "block";
+        }
+        function closeGame() {
+            let my_window = open(location, '_self');
+            my_window.close();
+            // window.close();
+        }
+    </script>
+</head>
+
+<body>
+    <!-- start page -->
+    <div class="startPage">
+        <video autoplay muted loop id="myVideo">
+            <source src="Coder's.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
+        </video>
+        <button id="myButton" onclick="startGame()"><img id="startButton" src="startButton.png"
+                alt="startButton"></button>
+    </div>
+    <div class="mainContainer">
+        <!-- Game page -->
+        <div class="headlineDiv">
+            <div class="headline-container1">
+                <span class="headline-text1">Playing <img src="pepsi1.png" alt="Pepsi Logo"></span>
+            </div>
+            <div class="headline-container2">
+                <span class="headline-text2">Playing <img src="flipkart.png" alt="flipkart Logo"></span>
+            </div>
+            <div class="headline-container3">
+                <span class="headline-text3">Playing <img src="amazon.png" alt="amazon Logo"></span>
+            </div>
+        </div>
+        <div class="scoreBoardDiv">
+            <div class="scoreWicket">
+                <span class="scoreBoard-text1">0</span>
+                <!-- </div> -->
+                <span class="middleOfScoreWicket">-</span>
+                <!-- <div class="wicket"> -->
+                <span class="scoreBoard-text2">0</span>
+            </div>
+        </div>
+        <!-- <div class="closeButton"> -->
+        <button class="closeButton" onclick="closeGame()"><img id="closeImg" src="close.png" alt="closeButton"></button>
+        <!-- </div> -->
+        <canvas class="canvas"></canvas>
+        <!-- headline div -->
+        <script src="index1.js"></script>
+    </div>
+    <!-- javascript error page -->
+    <div class="jsError">
+        <p>Please enable JavaScript to access this website.</p>
+    </div>
+
+</body>
+
+</html>
